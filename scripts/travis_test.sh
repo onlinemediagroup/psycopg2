@@ -13,6 +13,9 @@
 
 set -e -x
 
+# TODO: add to the image
+apt-get install -y bc
+
 run_test () {
     VERSION=$1
     DBNAME=psycopg2_test
