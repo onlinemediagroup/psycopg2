@@ -35,7 +35,7 @@ def main():
     # If you add a version to the list fix the docs (errorcodes.rst, err.rst)
     classes, errors = fetch_errors(
         ['8.1', '8.2', '8.3', '8.4', '9.0', '9.1', '9.2', '9.3', '9.4', '9.5',
-         '9.6', '10 b1'])
+         '9.6', '10 b2'])
 
     f = open(filename, "w")
     for line in file_start:
@@ -147,8 +147,8 @@ def fetch_errors(versions):
             c1, e1 = parse_errors_sgml(errors_sgml_url % version)
         else:
             # TODO: move to 10 stable when released.
-            if version == '10 b1':
-                tag = 'REL_10_BETA1'
+            if version == '10 b2':
+                tag = 'REL_10_BETA2'
             else:
                 tag = 'REL%s_STABLE' % version.replace('.', '_')
             c1, e1 = parse_errors_txt(errors_txt_url % tag)
